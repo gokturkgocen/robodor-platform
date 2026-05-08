@@ -1,8 +1,9 @@
 # Screenshots
 
-Do not publish mobile, web-admin or fleet screenshots here until they are
-redacted. The app can expose real devices, BLE identifiers, tenant names,
-operator names, command logs, cloud URLs and support contact data.
+No screenshots are committed by default. Publish only real, release-approved
+mobile, web-admin or fleet captures after redaction; do not use mockups or
+generated visuals. The app can expose real devices, BLE identifiers, tenant
+names, operator names, command logs, cloud URLs and support contact data.
 
 When release-approved screenshots are available, use this set:
 
@@ -22,4 +23,6 @@ When release-approved screenshots are available, use this set:
 - No command/audit rows that show production timings or operator actions.
 - Use demo data for screenshots whenever possible.
 
-Keep image widths reasonable (<= 1600 px) so the README renders fast on GitHub.
+Use native-resolution mobile captures for app screens and wide desktop captures
+(1920 × 1080 or larger) for web-admin surfaces. Compress before committing so
+the README stays fast on GitHub.

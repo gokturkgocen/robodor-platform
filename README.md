@@ -1,6 +1,9 @@
-# Robodor Platform
+# Robodor Mobile Control — Public Showcase
 
-End-to-end IoT door-automation platform: native iOS + Android mobile apps, AWS-native backend, and a web admin console.
+Native iOS + Android control system for Robodor controller boards, with local
+BLE/Modbus device communication, AWS-backed account and sync services, and web
+admin support. This repository documents the mobile/device-control platform
+around those boards; it is not a mirror of Robodor's full product line.
 
 > This repository is a **public showcase**. The actual product source (BLE protocol, Modbus register schemas, infrastructure IDs, hardware-specific tunings) is kept private. The code samples here are reusable infrastructure patterns I built during the project — none of them carry any of the proprietary product detail.
 >
@@ -13,7 +16,9 @@ End-to-end IoT door-automation platform: native iOS + Android mobile apps, AWS-n
 
 ## What it is
 
-Robodor sells industrial door controllers. Operators on site control them locally; tenants and service teams manage them remotely. The platform that ships with the product covers:
+Robodor sells industrial door controllers. Operators on site control them
+locally; tenants and service teams manage them remotely. This public showcase
+focuses on the control apps and the supporting cloud/admin surfaces:
 
 - **iOS app** (SwiftUI) — local BLE control, settings configuration, telemetry, alerts, charts.
 - **Android app** (Jetpack Compose) — feature-equivalent on Android, the original "golden contract" for device behaviour.
