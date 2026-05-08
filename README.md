@@ -3,6 +3,11 @@
 End-to-end IoT door-automation platform: native iOS + Android mobile apps, AWS-native backend, and a web admin console.
 
 > This repository is a **public showcase**. The actual product source (BLE protocol, Modbus register schemas, infrastructure IDs, hardware-specific tunings) is kept private. The code samples here are reusable infrastructure patterns I built during the project — none of them carry any of the proprietary product detail.
+>
+> The private product repositories contain the real commit history, release tags
+> and implementation. This public repo is a sanitized evidence pack: architecture
+> notes, selected reusable snippets, security decisions and platform highlights.
+> It is not a source mirror.
 
 ---
 
@@ -15,15 +20,29 @@ Robodor sells industrial door controllers. Operators on site control them locall
 - **AWS backend** (CDK + Lambda + Cognito + DynamoDB + S3) — accounts, organizations, roles, telemetry sync, remote command queue, encrypted backups.
 - **Web admin console** (React + Vite) — fleet view, per-device telemetry timeline, remote operations.
 
-I designed and built the iOS app from zero, did the dual-platform UI redesign (V2.0), built the AWS backend stack, and stewarded the cross-platform design system.
+My work spans the iOS app, the V2 cross-platform UI redesign, the AWS backend
+stack, and the shared design-system direction. Source code and hardware-tuned
+details stay private; the docs here describe the engineering shape.
 
-## Screenshots
+## Public evidence
 
-Screenshots live under [`screenshots/`](./screenshots/). Add the ones you'd like to show and they will render here.
+This public repo proves the work without exposing the product:
 
-<!-- Drop PNGs in screenshots/ and reference them like:
-![Dashboard](./screenshots/dashboard.png)
--->
+- [`docs/architecture.md`](docs/architecture.md) — local-first mobile control,
+  cloud sync, tenant isolation, command idempotency, encrypted backups.
+- [`docs/ios-highlights.md`](docs/ios-highlights.md) — SwiftUI concurrency,
+  Keychain session storage, telemetry persistence, Live Activities.
+- [`docs/android-highlights.md`](docs/android-highlights.md) — Compose,
+  StateFlow, foreground BLE service, settings schema, backup flow.
+- [`docs/server-highlights.md`](docs/server-highlights.md) — Cognito JWT,
+  DynamoDB tenant scope, S3/KMS, API throttling and logging hygiene.
+- [`docs/design-system.md`](docs/design-system.md) — shared iOS/Android token
+  model, component vocabulary, accessibility and idle-aware animation.
+- [`snippets/`](snippets/) — small, generic patterns extracted from the work.
+
+Screenshots are intentionally gated behind redaction. Anything showing real
+devices, BLE identifiers, tenant names, operators, command logs, cloud URLs, or
+admin data should not be published casually.
 
 ---
 
@@ -133,7 +152,7 @@ For more, see [`docs/architecture.md`](./docs/architecture.md).
 ```
 docs/                Architecture, design system, platform-specific notes
 snippets/            Generic, reusable infrastructure patterns I authored
-screenshots/         Visual showcase (added per release)
+screenshots/         Redaction checklist for release-approved images
 ```
 
 The actual product source — BLE/Modbus transport, register catalogue, settings schema, hardware tunings, AWS resource IDs — is **not in this repo** and never will be. What you see here is purely the patterns and infrastructure-side work, sanitised for public viewing.
